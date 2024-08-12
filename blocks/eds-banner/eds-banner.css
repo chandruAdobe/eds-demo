@@ -1,0 +1,12 @@
+.eds-banner {
+    background-color: blue;
+    padding: 25px;
+    border-radius: 20px;
+}
+.eds-banner img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 10px 0;
+}
