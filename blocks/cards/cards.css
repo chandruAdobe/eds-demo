@@ -25,3 +25,18 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+.footer-action {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #000;
+    border-radius: 14px;
+    background-color: #FF7;
+    width: auto;
+}
+
+.footer-action:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+}
