@@ -29,14 +29,14 @@
 .footer-action {
     display: flex;
     justify-content: center;
-    border: 1px solid #000;
+    border: 1px solid #7c6e6e;
     border-radius: 14px;
     background-color: #FF7;
     width: auto;
 }
 
 .footer-action:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #e0f6f6db;;
+    color: #7c6e6e;
     border-radius: 10px;
 }
