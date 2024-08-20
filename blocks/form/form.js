@@ -39,12 +39,12 @@ async function submitForm(form) {
   const payload = constructPayload(form);
   payload.timestamp = new Date().toJSON();
   const resp = await fetch(
-    `https://main--eds-demo--chandruadobe.hlx.page${form.dataset.action}`,
+    form.dataset.action,
     {
       method: 'POST',
       cache: 'no-cache',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({ data: payload }),
     },
