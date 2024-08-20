@@ -5,6 +5,7 @@ th {
   color: #fff;
   padding: 5px;
 }
+
 .dummies table,
 td {
   border: 1px solid black;
@@ -15,14 +16,17 @@ td {
   width: 40%;
   font-size: large;
 }
+
 .button-container {
   display: flex;
   justify-content: center;
 }
+
 .action-buttons {
   display: flex;
   justify-content: space-between;
 }
+
 .loader-wrapper {
   position: fixed;
   z-index: 5;
@@ -35,6 +39,7 @@ td {
   display: none;
   justify-content: center;
 }
+
 .loader {
   width: 60px;
   aspect-ratio: 4;
@@ -42,4 +47,5 @@ td {
   clip-path: inset(0 100% 0 0);
   animation: l1 1s steps(4) infinite;
 }
+
 @keyframes l1 {to{clip-path: inset(0 -34% 0 0) }}
