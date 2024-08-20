@@ -22,7 +22,7 @@ async function createTableRow(table, row) {
   table.append(tr);
 }
 
-async function createTable(jsonURL, val) {
+async function createTable(jsonURL, val, nxtButton, offset) {
   let pathname = null;
   if (val) {
     pathname = jsonURL;
@@ -33,12 +33,14 @@ async function createTable(jsonURL, val) {
   const resp = await fetch(pathname);
   const json = await resp.json();
 
-  const table = document.createElement('table');
+  const table = document.createElement("table");
   createTableHeader(table);
   json.data.forEach((row) => {
     createTableRow(table, row);
   });
-
+  if (nxtButton) {
+    nxtButton.disabled = parseInt(json.total, 10) <= offset;
+  }
   return table;
 }
 
@@ -61,12 +63,15 @@ async function createPagination(parentDiv, dummies) {
     const pageResults = await createTable(
       `${dummies.href}?offset=${offset}&limit=${resultsPerPage}&guessTotal=true`,
       null,
+      nxtButton,
+      offset - resultsPerPage,
     );
     parentDiv.innerHTML = "";
     parentDiv.append(pageResults);
     parentDiv.prepend(buttonWrapper);
     sessionStorage.setItem("page", offset);
     document.getElementById("loader-action").style.display = "none";
+    prevButton.disabled = parseInt(sessionStorage.getItem("page"), 10) === 0;
   });
   /* Next button action */
   nxtButton.addEventListener("click", async () => {
@@ -76,13 +81,17 @@ async function createPagination(parentDiv, dummies) {
     const pageResults = await createTable(
       `${dummies.href}?offset=${offset}&limit=${resultsPerPage}&guessTotal=true`,
       null,
+      nxtButton,
+      offset + resultsPerPage,
     );
     parentDiv.innerHTML = "";
     parentDiv.append(pageResults);
     parentDiv.prepend(buttonWrapper);
     sessionStorage.setItem("page", offset);
     document.getElementById("loader-action").style.display = "none";
+    prevButton.disabled = parseInt(sessionStorage.getItem("page"), 10) === 0;
   });
+  prevButton.disabled = (parseInt(sessionStorage.getItem("page"), 10) === 0);
   return buttonWrapper;
 }
 
