@@ -39,12 +39,12 @@ async function submitForm(form) {
   const payload = constructPayload(form);
   payload.timestamp = new Date().toJSON();
   const resp = await fetch(
-    `https://form.aem.page/main--eds-demo--chandruadobe.hlx.page/${form.dataset.action}`,
+    `https://form.aem.page/main--eds-demo--chandruadobe.hlx.page${form.dataset.action}`,
     {
       method: 'POST',
       cache: 'no-cache',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ data: payload }),
     },
