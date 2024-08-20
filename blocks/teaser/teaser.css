@@ -1,0 +1,20 @@
+.teaser-wrapper img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px !important;
+  height: 150px;
+}
+
+.teaser-wrapper .default-content-wrapper {
+    text-align: center;
+}
+
+.teaser-wrapper picture {
+    display: flex;
+    justify-content: center;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgb(0 140 186 50%);
+}
