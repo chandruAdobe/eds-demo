@@ -1,0 +1,45 @@
+.dummies table,
+th {
+  border: 1px solid black;
+  background-color: #79a9ff;
+  color: #fff;
+  padding: 5px;
+}
+.dummies table,
+td {
+  border: 1px solid black;
+  background-color: aliceblue;
+}
+
+.dummies .region-select > select {
+  width: 40%;
+  font-size: large;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.loader-wrapper {
+  position: fixed;
+  z-index: 5;
+  text-align: center;
+  top: 0;
+  background: #c3bcbc4f;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  display: none;
+  justify-content: center;
+}
+.loader {
+  width: 60px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side, #000 90%,#0000) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+@keyframes l1 {to{clip-path: inset(0 -34% 0 0) }}
