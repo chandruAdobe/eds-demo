@@ -38,6 +38,7 @@ function constructPayload(form) {
 async function submitForm(form) {
   const payload = constructPayload(form);
   payload.timestamp = new Date().toJSON();
+  /* To update the values in shared sheet */
   const resp = await fetch(
     form.dataset.action,
     {
