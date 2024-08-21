@@ -3,6 +3,8 @@ indices:
   site:
     include:
       - '**'
+    exclude:
+      - '/authoring-content'
     target: https://adobe-my.sharepoint.com/:f:/r/personal/tec71502_adobe_com/Documents/eds-demo?csf=1&web=1&e=Al2KvS/query-index
     properties:
       author:
